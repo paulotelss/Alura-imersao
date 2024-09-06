@@ -1,0 +1,371 @@
+/* styles.css */
+
+/* Reset básico */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #f7d354;
+    background-color: #010409;
+}
+
+/* Estilização do cabeçalho */
+.header-container {
+    background-color: #0d1117;
+    border-bottom: 2px solid #343b44;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+.logo img{
+    height: 90px;
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+.search-bar input{
+    background-color: #0d1117;
+    color: #f7d354;
+    padding: 10px;
+}
+
+#movieTitle {
+    padding: 15px;
+    font-size: 1rem;
+    width: 250px;
+    border: 2px solid #343b44;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+#searchButton {
+    padding: 15px;
+    font-size: 1rem;
+    color: #000000;
+    background-color: #f7d354;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #ffca00;
+}
+
+/* Estilização das seções */
+section {
+    margin: 2rem 0;
+}
+
+/* Estilização do contêiner do carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.movie-carousel {
+    display: flex;
+    overflow-x: hidden; /* Permite rolar horizontalmente */
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.movie-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Evita que os cards encolham */
+}
+
+.movie-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.movie-card h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.movie-card p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Botões do carrossel */
+.carousel-button {
+    background-color: #f7d354;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: #ffca00;
+}
+
+.prev-button {
+    left: 0;
+}
+
+.next-button {
+    right: 0;
+}
+
+/* Estilos para a seção de detalhes do filme */
+#movieDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #010409;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 80%;
+}
+
+/* Estilos para a imagem do filme */
+#movieDetails img {
+    max-width: 250px; /* Ajuste conforme necessário */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Estilos para o título e detalhes do filme */
+#movieDetails h3 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#movieDetails p {
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* Estilo para os cartões de filmes */
+.movie-card {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #ffca00; /* Cor de borda padrão */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona transição suave */
+    width: 200px; /* Defina a largura conforme necessário */
+    text-align: center;
+    background-color: #0a0808d0; /* Cor de fundo padrão */
+    cursor: pointer;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    border-bottom: 2px solid #ffca00; /* Borda inferior para separar a imagem do texto */
+    transition: opacity 0.3s ease; /* Adiciona transição suave para a imagem */
+}
+
+.movie-card h3, .movie-card p {
+    margin: 10px 0;
+    color: #ffffff; /* Cor do texto */
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do cartão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao cartão */
+}
+
+.movie-card:hover img {
+    opacity: 0.8; /* Torna a imagem um pouco mais escura no hover */
+}
+
+/* Adicione este CSS para estilizar os ícones */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Ajuste o espaçamento entre os ícones */
+    font-size: 20px;
+  }
+  
+  .icons a {
+    color: #ffca00; /* Cor dos ícones */
+    text-decoration: none;
+  }
+  
+  .icons a:hover {
+    color: #f7d354; /* Cor dos ícones ao passar o mouse */
+  }
+
+
+  
+
+
+
+ 
+
+
+  @media (max-width: 1024px) {
+    .header-container {
+        padding: 1rem;
+    }
+
+    .search-bar {
+        justify-content: center;
+    }
+
+    #movieTitle {
+        font-size: 0.9rem; /* Diminui um pouco a fonte */
+        padding: 10px;
+        width: 200px; /* Ajusta a largura */
+        margin-right: 0.5rem; /* Reduz o espaçamento */
+    }
+
+    #searchButton {
+        font-size: 0.9rem; /* Diminui o tamanho da fonte do botão */
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0.5rem;
+    }
+
+    .search-bar {
+        justify-content: center;
+    }
+
+    #movieTitle {
+        font-size: 0.8rem; /* Diminui ainda mais a fonte */
+        padding: 8px; /* Reduz o padding */
+        width: 180px; /* Diminui um pouco a largura */
+        margin-right: 0.5rem;
+    }
+
+    #searchButton {
+        font-size: 0.8rem; /* Reduz mais o tamanho da fonte do botão */
+        padding: 8px; /* Ajusta o padding para não ficar muito grande */
+    }
+
+    /* Ajusta o espaçamento entre os ícones */
+    .icons {
+        gap: 30px;
+    }
+}
+
+
+@media (max-width: 604px) {
+    /* Ajuste geral do cabeçalho */
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    /* Logo centralizada */
+    .logo {
+        margin-bottom: 1rem; /* Espaço entre a logo e os outros elementos */
+    }
+
+    /* Barra de pesquisa centralizada, sem alterar o tamanho dos elementos */
+    .search-bar {
+        flex-direction: row;
+        width: 100%; /* Mantém o tamanho original */
+        justify-content: center;
+    }
+
+    #movieTitle {
+        flex: 1;
+        font-size: 1rem; /* Mantém o tamanho original da fonte */
+        padding: 10px; /* Mantém o padding original */
+        margin-right: 0.5rem; /* Remove margem direita */
+    }
+
+    #searchButton {
+        flex-shrink: 0; /* Impede que o botão encolha */
+        font-size: 1rem; /* Mantém o tamanho original da fonte */
+        padding: 10px; /* Mantém o padding original */
+    }
+
+    /* Ajuste dos ícones */
+    .icons {
+        justify-content: center; /* Centraliza os ícones */
+        gap: 20px; /* Reduz o espaçamento entre eles */
+        font-size: 18px; /* Ajusta o tamanho dos ícones */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para a barra de navegação inferior */
+.bottom-nav {
+    display: none; /* Inicialmente oculta em telas maiores */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #0d1117;
+    border-top: 2px solid #343b44;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.bottom-nav .icons {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os ícones */
+}
+
+.bottom-nav .icons a {
+    color: #ffca00; /* Cor dos ícones */
+    font-size: 24px; /* Tamanho dos ícones */
+    text-decoration: none;
+}
+
+.bottom-nav .icons a:hover {
+    color: #f7d354; /* Cor dos ícones ao passar o mouse */
+}
+
+/* Mostrar a barra de navegação inferior e esconder os ícones do cabeçalho em telas menores */
+@media (max-width: 604px) {
+    .bottom-nav {
+        display: flex; /* Mostrar a barra de navegação inferior */
+    }
+
+    /* Esconder os ícones no cabeçalho em telas menores */
+    .header-container .icons {
+        display: none;
+    }
+}

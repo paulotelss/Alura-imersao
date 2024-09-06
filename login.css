@@ -1,0 +1,453 @@
+/* Reseta margens e preenchimentos, e define box-sizing para border-box para todos os elementos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* Estiliza o corpo da página */
+  body{
+    height: 100vh;
+    width: 100%;
+    background-image: url(caminho/da/imagem); /* aqui de inicio seria uma imagem, mas acabou que escolhi video no fundo*/
+    background-image: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Cria uma sobreposição escura sobre o fundo */
+  body::before{
+    content: '';
+    background-color: #010409a8;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  
+  /* Define o tamanho do logo */
+  .logo img{
+    width: 190px;
+    position: relative;
+    z-index: 100;
+  }
+  /* Estiliza o cabeçalho */
+  header{
+    padding: 20px;
+    position: relative;
+    z-index: 2000; /* Garante que o cabeçalho fique acima dos outros elementos */
+  }
+  /* Define o estilo do contêiner principal */
+  .container{
+    padding: 60px;
+    z-index: 10; /* Garante que o contêiner fique acima dos elementos com menor z-index */
+    position: relative;
+    max-width: 450px;
+    height: 550px;
+    margin-left: 50%;
+    background-color: #010409e1;
+    transform: translate(-50%, 20%); /* Centraliza o contêiner e o desloca um pouco para baixo */
+    border-radius: 10px; /* Cantos arredondados */
+  }
+  /* Estiliza o título dentro do contêiner */
+  .container h2{
+    color: #fff;
+    font-size: 34px;
+    margin-bottom: 25px;
+  }
+  /* Define o estilo dos campos de entrada e do botão dentro do contêiner */
+  .container .box-input{
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espaçamento entre os campos de entrada */
+    margin-bottom: 25px;
+  }
+  .container .box-input input{
+    height: 50px;
+    width: 100%;
+    color: #ffca00;
+    background-color: #333;
+    border: none;
+    outline: none;
+    padding: 0 15px 0 15px; /* Espaçamento interno */
+    border-radius: 5px;
+  }
+  .container .box-input input:hover{
+    background-color: #444; /* Altera a cor do fundo quando o mouse passa sobre o campo */
+  }
+  .container .box-input .btn{
+    height: 50px;
+    width: 100%;
+    background-color: #f7d354;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all .2s ease-in-out; /* Transição suave ao passar o mouse */
+  }
+  .container .box-input .btn:hover{
+    background-color: #ffca00; /* Altera a cor do fundo quando o mouse passa sobre o botão */
+  }
+  /* Estiliza a seção de suporte */
+  .support{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    font-size: 15px;
+    margin: 30px 0 30px 0;
+  }
+  .support .remember{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #fff;
+  }
+  .help a{
+    color: #b3b3b3;
+    text-decoration: none;
+  }
+  /* Define o estilo do rodapé */
+  .footer{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #b3b3b3;
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+  .footer a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .description_footer{
+    color: #b3b3b3;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .description_footer span{
+    color: #0071eb;
+    cursor: pointer;
+  }
+/* Estiliza o vídeo de fundo */  
+  #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+
+
+/* Ajustes para tablets (largura máxima de 768px) */
+@media (max-width: 768px) {
+    .container {
+      width: 90%;
+      height: auto;
+      padding: 40px;
+      transform: translate(-50%, 10%);
+    }
+  
+    .container h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  
+    .container .box-input input {
+      height: 45px;
+    }
+  
+    .container .box-input .btn {
+      height: 45px;
+    }
+  
+    .support {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  
+    .footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .footer a {
+      margin-top: 10px;
+    }
+  
+    .description_footer {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  
+  /* Ajustes para celulares (largura máxima de 480px) */
+  @media (max-width: 480px) {
+    .container {
+      width: 90%;
+      height: auto;
+      padding: 30px;
+      transform: translate(-50%, 5%);
+    }
+  
+    .container h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  
+    .container .box-input input {
+      height: 40px;
+    }
+  
+    .container .box-input .btn {
+      height: 40px;
+    }
+  
+    .support {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .description_footer {
+      font-size: 11px;
+      line-height: 14px;
+    }
+  
+    .logo img {
+      width: 150px;
+    }
+  
+    header {
+      padding: 10px;
+    }
+  }
+
+  
+
+/* Estilização da faixa promocional no topo */
+.promo-banner {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Fica acima de todos os outros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Pequena sombra para destaque */
+  }
+  
+  .promo-banner p {
+    margin: 0;
+  }
+  
+  /* Ajuste no padding do header para compensar a faixa */
+  header {
+    padding-top: 60px; /* Ajuste o valor para evitar sobreposição */
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .promo-banner {
+      font-size: 16px;
+      padding: 10px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .promo-banner {
+      font-size: 14px;
+      padding: 8px 0;
+    }
+  }
+  
+
+/* Estilização do banner de cookies */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cookie-banner p {
+    margin: 0;
+  }
+  
+  .cookie-banner a {
+    color: #f7d354;
+    text-decoration: underline;
+  }
+  
+  .cookie-banner button {
+    background-color: #f7d354;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .cookie-banner button:hover {
+    background-color: #ffca00; /* Altera a cor do fundo quando o mouse passa sobre o botão */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+  /* Estilo do modal */
+.modal {
+  display: none; /* Oculta o modal por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com opacidade */
+  z-index: 2001; /* Fica acima dos outros elementos */
+  overflow: auto; /* Permite rolar o conteúdo do modal se for maior que a tela */
+}
+
+.modal-content {
+  position: relative;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  z-index: 2001; /* Garantir que o conteúdo do modal esteja acima do fundo */
+}
+
+/* Botão de fechar */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Tabelas de preço */
+.pricing-tables {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap; /* Ajusta as tabelas para a tela */
+}
+
+.pricing-table {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  width: 30%;
+  min-width: 250px; /* Garante largura mínima */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2000; 
+}
+
+.pricing-table h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.pricing-table p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.pricing-table ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.pricing-table ul li {
+  margin-bottom: 10px;
+}
+
+.pricing-table .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f7d354;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.pricing-table .btn:hover {
+  background-color: #ffca00;
+}
+
+/* Sobreposição do modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo desfocado */
+  display: none; /* Oculta por padrão */
+  z-index: 2000; /* Deve estar atrás do modal, mas acima do conteúdo */
+}
+
+/* Ajuste no header para evitar sobreposição */
+header {
+  position: relative;
+  z-index: 2000; /* Garantir que o header esteja acima do modal e do fundo */
+}
+
+/* Ajuste para o container de login */
+.container {
+  position: relative;
+  z-index: 10; /* Garante que o container de login esteja acima do fundo */
+  max-width: 450px;
+  margin: 0 auto; /* Centraliza o container */
+  transform: translate(0, 0); /* Remove qualquer transformação que possa estar deslocando o container */
+  padding: 20px; /* Ajusta o padding conforme necessário */
+  background-color: #010409e1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destaque */
+}
+

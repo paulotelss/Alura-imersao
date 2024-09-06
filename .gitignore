@@ -1,0 +1,22 @@
+# Ignorar arquivos de vídeo grandes
+*.mp4
+
+# Ignorar arquivos temporários e de sistema
+*.log
+*.tmp
+*.swp
+
+# Ignorar diretórios específicos
+node_modules/
+dist/
+build/
+
+# Ignorar arquivos de configuração específicos
+.env
+
+# Ignorar arquivos gerados por IDEs
+.vscode/
+.idea/
+
+# Ignorar arquivos de cache
+*.cache

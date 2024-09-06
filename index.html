@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
+  <title>Cult</title>
+</head>
+<body>
+    <!-- Faixa promocional -->
+    <section class="promo-banner">
+        <p>Plano trimestral a partir de 38,90</p>
+    </section>
+    <!-- Video de fundo -->
+    <video autoplay muted loop id="bg-video">
+        <source src="img/Project_09-05_Full HD.mp4" type="video/mp4">
+    </video>
+
+  <header>
+    <!-- logo -->
+    <div class="logo">
+      <a href="#">
+        <img src="img/cult-logo-movie.png" alt="logo">
+      </a>
+    </div>
+  </header>
+  <section class="container">
+    <!-- conateiner de login -->
+    <div class="login">
+      <h2>Login</h2>
+      <form class="box-input">
+        <input type="email" placeholder="Digite seu e-mail">
+        <input type="password" placeholder="Digite sua enha">
+        <a href="movie.html" class="btn">Entrar</a>
+      </form>
+      <div class="support">
+        <div class="remember">
+          <span><input type="checkbox" id="check"></span>
+          <label for="check">Lembrar</label>
+        </div>
+        <div class="help">
+          <a href="#">Precisa de ajuda?</a>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Novo por aqui?</p>
+        <a href="#" id="open-modal">Veja nossos planos</a>
+      </div>
+      <p class="description_footer">Está página é protegida pelo Google reCAPTCHA para garantir que você não é robô <span>Saiba mais.</span></p>
+    </div>
+  </section>
+
+  <!-- politica de cookies -->
+  <div class="cookie-banner" id="cookie-banner">
+    <p>Este site utiliza cookies para melhorar sua experiência. <a href="#">Saiba mais</a>.</p>
+    <button id="accept-cookies">Aceitar</button>
+  </div>
+
+  <!-- preços do serviço -->
+
+  <div id="price-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="close-modal">&times;</span>
+      <h2>Planos de Preço</h2>
+      <div class="pricing-tables">
+        <div class="pricing-table">
+          <h3>Mensal: Básico</h3>
+          <p>$ 18,90</p>
+          <ul>
+            <li>Catálogo completo e anúncio</li>
+            <li>2 Telas simultâneas</li>
+            <li>1 Download por vez</li>
+          </ul>
+          <a href="#" class="btn">Assinar Mensal</a>
+        </div>
+        
+        <div class="pricing-table">
+          <h3>Trimestral</h3>
+          <p>$ 38,90</p>
+          <ul>
+            <li>Catálogo completo</li>
+            <li>4 Telas simultâneas</li>
+            <li>Download livre</li>
+          </ul>
+          <a href="#" class="btn">Assinar Trimestral</a>
+        </div>
+        <div class="pricing-table">
+          <h3>Anual Vip</h3>
+          <p>R$ 320,00</p>
+          <ul>
+            <li>Catálogo Completo + Canais</li>
+            <li>6 Telas simultâneas</li>
+            <li>Download Livre</li>
+          </ul>
+          <a href="#" class="btn">Assinar Anual</a>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-overlay"></div>
+  </div>
+
+  <!-- adicionando cookies js -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cookieBanner = document.getElementById('cookie-banner');
+      const acceptCookiesButton = document.getElementById('accept-cookies');
+  
+      // Função para definir um cookie
+      function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+      }
+  
+      // Função para verificar se um cookie existe
+      function getCookie(name) {
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const cookieArray = decodedCookie.split(';');
+        for (let i = 0; i < cookieArray.length; i++) {
+          let cookie = cookieArray[i].trim();
+          if (cookie.indexOf(name + "=") == 0) {
+            return cookie.substring((name + "=").length, cookie.length);
+          }
+        }
+        return "";
+      }
+  
+      // Verifica se o cookie de consentimento já foi dado
+      if (!getCookie('cookiesAccepted')) {
+        cookieBanner.style.display = 'flex';
+      }
+  
+      // Aceitar cookies
+      acceptCookiesButton.addEventListener('click', function () {
+        setCookie('cookiesAccepted', 'true', 365); // Define um cookie válido por 1 ano
+        cookieBanner.style.display = 'none';
+        console.log("Consentimento de cookies foi aceito e armazenado.");
+      });
+    });
+
+    // modal price
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const openModalButton = document.getElementById('open-modal');
+      const closeModalButton = document.getElementById('close-modal');
+      const modal = document.getElementById('price-modal');
+      const overlay = document.getElementById('modal-overlay');
+
+      // Abre o modal
+      openModalButton.addEventListener('click', function(e) {
+        e.preventDefault(); // Previne o comportamento padrão do link
+        modal.style.display = 'block';
+        overlay.style.display = 'block';
+      });
+
+      // Fecha o modal
+      closeModalButton.addEventListener('click', function() {
+          modal.style.display = 'none';
+         overlay.style.display = 'none';
+      });
+
+      // Fecha o modal quando clicar fora do conteúdo
+      overlay.addEventListener('click', function() {
+         modal.style.display = 'none';
+         overlay.style.display = 'none';
+      });
+    });
+
+
+    const loginForm = document.querySelector('.box-input');
+    const emailInput = loginForm.querySelector('input[type="email"]');
+    const passwordInput = loginForm.querySelector('input[type="password"]');
+    const submitButton = loginForm.querySelector('.btn');  
+
+
+    submitButton.addEventListener('click', (event) => {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        const email = emailInput.value;
+        const password = passwordInput.value;
+        // dados obrigatórios do login
+        if (email === 'Alura' && password === 'alura223') {
+            window.location.href = 'movie.html';
+        } else {
+            alert('Email ou senha inválidos.');
+        }
+      });
+  </script>
+  
+</body>
+</html>

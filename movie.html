@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes e Séries</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- cabeçalho principal da página -->
+    <header class="header-container">
+        <div class="logo">
+            <img src="img/cult-logo-movie.png" alt="Logo" >
+        </div>
+        <div class="search-bar">
+            <input type="text" id="movieTitle" placeholder="Digite o título do filme">
+            <button id="searchButton" onclick="searchMovie()">Buscar</button>
+        </div>
+        <div class="icons">
+            <a href="#" title="Filmes"><i class="fas fa-film"></i></a>
+            <a href="#" title="Séries"><i class="fas fa-tv"></i></a>
+            <a href="#" title="Esportes"><i class="fas fa-futbol"></i></a>
+            <a href="#" title="Download"><i class="fa-solid fa-download"></i></a>
+        </div>
+    </header>
+
+    <main id="mainContent">
+        <section id="highlightSection">
+            <h2>Destaque</h2>
+            <div class="carousel-container">
+                <button class="carousel-button prev-button" onclick="scrollLeft('highlightMovies')">◀</button>
+                <div id="highlightMovies" class="movie-carousel">
+                    <!-- Filmes em destaque serão adicionados manualmente aqui -->
+                    <div class="movie-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/pt/4/46/Pearl_2022.jpg" alt="Poster do filme">
+                        <h3>Pearl (2022)</h3>
+                        <p>Direção: Ti West</p>
+                        <p>Gênero: Drama, Horror</p>
+                        <p>Nota IMDb: 7.0</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://musicart.xboxlive.com/7/b8841000-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080" alt="Poster do filme">
+                        <h3>Interestelar</h3>
+                        <p>Direção: Christopher Nolan</p>
+                        <p>Gênero: Drama, Adventure, Sci-Fi</p>
+                        <p>Nota IMDb: 8.7</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://bioscopenleiden.nl/content/uploads/2024/06/1110059-longlegs-0-1000-0-1500-crop.jpg" alt="Poster do filme">
+                        <h3>Longlegs: Vínculo Mortal (2024)</h3>
+                        <p>Direção: Osgood Perkins</p>
+                        <p>Gênero: Psychological Thriller, Horror, Serial Killer</p>
+                        <p>Nota IMDb: 6.9</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://s3.amazonaws.com/nightjarprod/content/uploads/sites/261/2024/08/05154755/b33nnKl1GSFbao4l3fZDDqsMx0F-scaled.jpg" alt="Poster do filme">
+                        <h3>Alien: Romulus (2024)</h3>
+                        <p>Direção: Fede Alvarez</p>
+                        <p>Gênero: Drama, Horror, Sci-Fi, Monster</p>
+                        <p>Nota IMDb: 7.4</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://play-lh.googleusercontent.com/dFIni0v00Edyd7Pgqc7TbQqqYO6v0qHewoyZPjT7INuQmX24nBvtoLLA3YPfKuAT15VY9bfSlbQoa-kLPg" alt="Poster do filme">
+                        <h3>Mergulho Noturno (2024)</h3>
+                        <p>Direção: Bryce McGuire</p>
+                        <p>Gênero: Supernatural Horror, Horror, Thriller</p>
+                        <p>Nota IMDb: 4.7</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://br.web.img3.acsta.net/pictures/22/11/30/19/53/5856320.jpg" alt="Poster do filme">
+                        <h3>The Last Of Us</h3>
+                        <p>Direção: Neil Druckmann, Craig Mazin</p>
+                        <p>Gênero: Drama, Survival, Quest, Action</p>
+                        <p>Nota IMDb: 8.7</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://www.atoupeira.com.br/wp-content/uploads/2019/12/sonic-novo-poster-0512.jpg" alt="Poster do filme">
+                        <h3>Sonic: O Filme</h3>
+                        <p>Direção: Jeff Fowler</p>
+                        <p>Gênero: Comedy, Animal Adventure, Road Trip, Superhero</p>
+                        <p>Nota IMDb: 6.5</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://cdn.kinocheck.com/i/1xgg8pa2fa.jpg" alt="Poster do filme">
+                        <h3>Bom Garoto</h3>
+                        <p>Direção: Viljar Bøe</p>
+                        <p>Gênero: Thriller, Horror</p>
+                        <p>Nota IMDb: 5.7</p>
+                    </div>
+                    <!-- Adicionar mais filmes -->
+                </div>
+                <button class="carousel-button next-button" onclick="scrollRight('highlightMovies')">▶</button>
+            </div>
+        </section>
+
+        <div class="bottom-nav">
+            <div class="icons">
+                <a href="#" title="Filmes"><i class="fas fa-film"></i></a>
+            <a href="#" title="Séries"><i class="fas fa-tv"></i></a>
+            <a href="#" title="Esportes"><i class="fas fa-futbol"></i></a>
+            <a href="#" title="Download"><i class="fa-solid fa-download"></i></a>
+            </div>
+        </div>
+    
+        <!-- Recomendados manualmente -->
+        <section id="recommendedSection">
+            <h2>Recomendações</h2>
+            <div class="carousel-container">
+                <button class="carousel-button prev-button" onclick="scrollLeft('recommendedMovies')">◀</button>
+                <div id="recommendedMovies" class="movie-carousel">
+                    <!-- Filmes recomendados serão adicionados aqui -->
+                    <div class="movie-card">
+                        <img src="https://br.web.img3.acsta.net/pictures/22/11/30/19/53/5856320.jpg" alt="Poster do filme">
+                        <h3>The Last Of Us</h3>
+                        <p>Direção: Neil Druckmann, Craig Mazin</p>
+                        <p>Gênero: Drama, Survival, Quest, Action</p>
+                        <p>Nota IMDb: 8.7</p>
+                    </div>
+        
+                    <div class="movie-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/pt/4/46/Pearl_2022.jpg" alt="Poster do filme">
+                        <h3>Pearl (2022)</h3>
+                        <p>Direção: Ti West</p>
+                        <p>Gênero: Drama, Horror, Slasher</p>
+                        <p>Nota IMDb: 7.0</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://br.web.img2.acsta.net/pictures/210/166/21016629_2013062820083878.jpg" alt="Poster do filme">
+                        <h3>Invocação do Mal</h3>
+                        <p>Direção: James Wan</p>
+                        <p>Gênero: Terror</p>
+                        <p>Nota IMDb: 7.5</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/03b42f196940795.6628268fd8a2a.jpg" alt="Poster do filme">
+                        <h3>Fallout</h3>
+                        <p>Direção:  Geneva Robertson-Dworet, Graham Wagner</p>
+                        <p>Gênero: Drama, Survival, War, Action</p>
+                        <p>Nota IMDb: 8.4</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://pics.filmaffinity.com/X-187741587-large.jpg" alt="Poster do filme">
+                        <h3>X: A Marca da Morte (2022)</h3>
+                        <p>Direção: Ti West</p>
+                        <p>Gênero: Slasher Horror, Suspense Mystery, Thriller</p>
+                        <p>Nota IMDb: 6.5</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://lumiere-a.akamaihd.net/v1/images/image_9b066416.jpeg?region=0,0,540,810" alt="Poster do filme">
+                        <h3>Deadpool & Wolverine</h3>
+                        <p>Direção: Shawn Levy</p>
+                        <p>Gênero: Dark Comedy, Action, Adventure, Superhero</p>
+                        <p>Nota IMDb: 8.0</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://bellmedia-images.imgix.net/lede/wp-content/uploads/2022/04/The_Batman_2000x3000_DP_poster-768x1152.png?auto=format&q=60&crop=faces%2C%20edges&ar=2%3A3&fit=crop&ixlib=react-9.8.1&w=500" alt="Poster do filme">
+                        <h3>The Batman (2022)</h3>
+                        <p>Direção: Matt Reeves</p>
+                        <p>Gênero: Drama, Crime, Epic, Action, Superhero</p>
+                        <p>Nota IMDb: 7.9</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://media.fstatic.com/gl7XQuudMui9Cx3I02wlFQQDlwM=/210x312/smart/filters:format(webp)/media/movies/covers/2016/12/Apocalypto.jpg" alt="Poster do filme">
+                        <h3>Apocalypto</h3>
+                        <p>Direção: Mel Gibson</p>
+                        <p>Gênero: Drama, Survival, Action, Jungle Adventure</p>
+                        <p>Nota IMDb: 7.8</p>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://i0.wp.com/metagalaxia.com.br/wp-content/uploads/2018/01/the-end-of-the-fucking-world-resenha-1-scaled.jpg?resize=1068%2C1608&ssl=1" alt="Poster do filme">
+                        <h3>The End of the F***ing World (2017)</h3>
+                        <p>Artistas: Jessica Barden, Alex Lawther, Steve Oram</p>
+                        <p>Gênero: Drama, Crime, Romance, Action, Adventure</p>
+                        <p>Nota IMDb: 8.0</p>
+                    </div>
+                </div>
+                <button class="carousel-button next-button" onclick="scrollRight('recommendedMovies')">▶</button>
+            </div>
+        </section>
+    </main>
+
+    <section id="movieDetails">
+        <!-- Detalhes do filme buscado onde serão exibidos -->
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
