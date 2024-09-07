@@ -14,6 +14,11 @@
 
 ## Cult film production
 
+![gitphoto01](https://github.com/user-attachments/assets/f6185ec9-0cb8-4e07-8071-d81f608da99e)
+![gitphoto02](https://github.com/user-attachments/assets/9b2e38e9-40d1-4171-942d-33bd6ee48557)
+![gitphoto03](https://github.com/user-attachments/assets/6940946a-68d1-4bd7-ba58-6ff1f36060df)
+
+
 **Durante os 5 dias de imersão da Alura, meu projeto consistiu em criar uma aplicação de filmes com o objetivo de permitir pesquisas sem ajuda de APIs externas.**
 
  Basicamente, criei uma constante com o nome `movies`, e dentro dela coloquei alguns filmes de base.
@@ -105,6 +110,11 @@ O site está responsivo para qualquer dispositivo, seja ele desktop ou mobile.
 Aqui não teve muito mistério, apenas utilizei `@media` e fui ajustando tamanhos consideráveis para os objetos não ficarem quebrados.
 
 ## Página de Login
+
+![img001](https://github.com/user-attachments/assets/664309b6-336b-4832-a699-1ce4bbcfd8c4)
+![img002](https://github.com/user-attachments/assets/9b684349-5150-46a2-a3be-33cb90f50f66)
+![img003](https://github.com/user-attachments/assets/93337380-bad9-4f4a-b41a-8fdd4043a938)
+
 
 **Faixa Promocional**
 
