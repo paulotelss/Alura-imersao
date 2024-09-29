@@ -201,3 +201,5 @@ Navegue pelos planos de preços clicando em "Veja nossos planos".
 - Adicionar validação mais robusta no login, integrando com um backend real.
 - Implementar a funcionalidade de cadastro de novos usuários.
 - Melhorar mais ainda o design responsivo para telas ainda menores.
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=65&section=footer"/>
